@@ -12,84 +12,102 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #f4f4f4;
+      background: #f0f0f0;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       padding: 2rem 1rem;
     }
     .card {
-      width: 360px;
+      width: 340px;
       border-radius: 20px;
-      overflow: hidden;
-      border: 0.5px solid #ddd;
+      overflow: visible;
       background: #fff;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      box-shadow: 0 6px 32px rgba(0,0,0,0.13);
     }
+
+    /* HEADER */
     .card-header {
       background: #C8102E;
-      padding: 28px 24px 20px;
+      border-radius: 20px 20px 0 0;
+      padding: 24px 20px 64px;
       display: flex;
-      align-items: center;
-      gap: 16px;
+      align-items: flex-start;
+      gap: 14px;
       position: relative;
     }
-    .avatar-ring {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      border: 2.5px solid rgba(255,255,255,0.7);
-      overflow: hidden;
-      flex-shrink: 0;
-      background: #a00020;
+    .header-logo img {
+      width: 90px;
+      display: block;
     }
-    .avatar-ring img {
+    .header-info {
+      flex: 1;
+      padding-top: 4px;
+    }
+    .name {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 3px;
+      line-height: 1.2;
+    }
+    .cargo {
+      color: rgba(255,255,255,0.85);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0 0 3px;
+    }
+    .banco-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 12px;
+    }
+
+    /* FOTO FLOTANTE */
+    .avatar-wrap {
+      position: absolute;
+      bottom: -44px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      overflow: hidden;
+      background: #a00020;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    .avatar-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
     }
-    .header-info { flex: 1; }
-    .name {
-      color: #fff;
-      font-size: 17px;
-      font-weight: 600;
-      margin: 0 0 3px;
-      line-height: 1.2;
-    }
-    .cargo {
-      color: rgba(255,255,255,0.82);
-      font-size: 12px;
-      margin: 0 0 4px;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .banco {
-      color: rgba(255,255,255,0.65);
-      font-size: 12px;
-      margin: 0;
-    }
-    .logo-corner {
-      position: absolute;
-      top: 14px;
-      right: 16px;
-      font-size: 15px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.9);
-    }
+
+    /* BODY */
     .card-body {
-      padding: 18px 24px 4px;
+      border-radius: 0 0 20px 20px;
+      overflow: hidden;
+      margin-top: 0;
+      padding-top: 56px;
+    }
+
+    .info-section {
+      padding: 0 22px 4px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 0;
     }
     .info-row {
       display: flex;
       align-items: center;
       gap: 10px;
+      padding: 11px 0;
+      border-bottom: 0.5px solid #ebebeb;
       font-size: 14px;
       color: #222;
     }
+    .info-row:last-child { border-bottom: none; }
     .info-row i {
       font-size: 18px;
       color: #C8102E;
@@ -98,40 +116,37 @@
       flex-shrink: 0;
     }
     .info-label {
-      color: #888;
-      font-size: 11px;
+      color: #999;
+      font-size: 10.5px;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 1px;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
     }
-    .divider {
-      height: 0.5px;
-      background: #e5e5e5;
-      margin: 2px 0;
-    }
+
+    /* SERVICIOS */
     .services-section {
-      padding: 14px 24px 6px;
-      border-top: 0.5px solid #e5e5e5;
+      padding: 12px 22px 6px;
+      border-top: 0.5px solid #ebebeb;
     }
     .services-title {
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       color: #C8102E;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin: 0 0 4px;
+      letter-spacing: 0.06em;
+      margin: 0 0 2px;
     }
     .services-subtitle {
       font-size: 12px;
-      color: #888;
-      margin: 0 0 10px;
+      color: #999;
+      margin: 0 0 8px;
     }
     .service-item {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
       padding: 8px 0;
-      border-bottom: 0.5px solid #e5e5e5;
+      border-bottom: 0.5px solid #ebebeb;
       font-size: 13.5px;
       color: #222;
     }
@@ -143,18 +158,20 @@
       text-align: center;
       flex-shrink: 0;
     }
+
+    /* BOTONES */
     .btn-row {
       display: flex;
       gap: 10px;
-      padding: 14px 24px 20px;
-      border-top: 0.5px solid #e5e5e5;
+      padding: 14px 22px 20px;
+      border-top: 0.5px solid #ebebeb;
     }
     .btn {
       flex: 1;
       padding: 11px 8px;
       border-radius: 10px;
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -168,82 +185,89 @@
     .btn-wa { background: #25D366; color: #fff; }
     .btn-contact { background: #C8102E; color: #fff; }
     .btn i { font-size: 16px; }
+
+    /* FOOTER */
     .card-footer {
-      padding: 8px 24px 14px;
+      padding: 8px 22px 14px;
       text-align: center;
       font-size: 11px;
-      color: #aaa;
-      border-top: 0.5px solid #e5e5e5;
+      color: #bbb;
+      border-top: 0.5px solid #ebebeb;
     }
   </style>
 </head>
 <body>
   <div class="card">
+
     <div class="card-header">
-      <div class="logo-corner">AV Villas</div>
-      <div class="avatar-ring">
-        <img src="JuanCampos-AV-Villas.jpeg" alt="Juan David Campos G." />
+      <div class="header-logo">
+        <img src="av_villas_logo.png" alt="Banco AV Villas" />
       </div>
       <div class="header-info">
         <p class="name">Juan David Campos G.</p>
         <p class="cargo">Ejecutivo Comercial</p>
-        <p class="banco">Banco AV Villas</p>
+        <p class="banco-sub">Banco AV Villas</p>
+      </div>
+      <div class="avatar-wrap">
+        <img src="JuanCampos-AV-Villas.jpeg" alt="Juan David Campos G." />
       </div>
     </div>
 
     <div class="card-body">
-      <div class="info-row">
-        <i class="ti ti-phone" aria-hidden="true"></i>
-        <div>
-          <p class="info-label">Teléfono / WhatsApp</p>
-          <span>+57 311 356 9613</span>
+      <div class="info-section">
+        <div class="info-row">
+          <i class="ti ti-phone" aria-hidden="true"></i>
+          <div>
+            <p class="info-label">Teléfono / WhatsApp</p>
+            <span>+57 311 356 9613</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <i class="ti ti-map-pin" aria-hidden="true"></i>
+          <div>
+            <p class="info-label">Ubicación</p>
+            <span>Medellín – Antioquia</span>
+          </div>
         </div>
       </div>
-      <div class="divider"></div>
-      <div class="info-row">
-        <i class="ti ti-map-pin" aria-hidden="true"></i>
-        <div>
-          <p class="info-label">Ubicación</p>
-          <span>Medellín - Antioquia</span>
+
+      <div class="services-section">
+        <p class="services-title">Soluciones financieras</p>
+        <p class="services-subtitle">para personas y empresas</p>
+        <div class="service-item">
+          <i class="ti ti-credit-card" aria-hidden="true"></i>
+          Tarjetas de crédito
+        </div>
+        <div class="service-item">
+          <i class="ti ti-cash" aria-hidden="true"></i>
+          Crédito de libre inversión
+        </div>
+        <div class="service-item">
+          <i class="ti ti-arrows-exchange" aria-hidden="true"></i>
+          Compra de cartera
+        </div>
+        <div class="service-item">
+          <i class="ti ti-users" aria-hidden="true"></i>
+          Apertura de cuentas de nómina
         </div>
       </div>
-    </div>
 
-    <div class="services-section">
-      <p class="services-title">Soluciones financieras</p>
-      <p class="services-subtitle">para Personas y Empresas</p>
-      <div class="service-item">
-        <i class="ti ti-credit-card" aria-hidden="true"></i>
-        Tarjetas de crédito
+      <div class="btn-row">
+        <a class="btn btn-wa" href="https://wa.me/573113569613?text=Hola%20Juan%20David%2C%20te%20contacto%20desde%20tu%20tarjeta%20virtual." target="_blank">
+          <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+          Escríbeme
+        </a>
+        <a class="btn btn-contact" href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:Juan%20David%20Campos%20G.%0AORG:Banco%20AV%20Villas%0ATITLE:Ejecutivo%20Comercial%0ATEL:+573113569613%0AEND:VCARD" download="JuanDavidCampos_AVVillas.vcf">
+          <i class="ti ti-user-plus" aria-hidden="true"></i>
+          Agregar contacto
+        </a>
       </div>
-      <div class="service-item">
-        <i class="ti ti-cash" aria-hidden="true"></i>
-        Crédito de libre inversión
-      </div>
-      <div class="service-item">
-        <i class="ti ti-arrows-exchange" aria-hidden="true"></i>
-        Compra de cartera
-      </div>
-      <div class="service-item">
-        <i class="ti ti-users" aria-hidden="true"></i>
-        Apertura de cuentas de nómina
+
+      <div class="card-footer">
+        Banco AV Villas · Entidad vigilada por la Superfinanciera
       </div>
     </div>
 
-    <div class="btn-row">
-      <a class="btn btn-wa" href="https://wa.me/573113569613?text=Hola%20Juan%20David%2C%20te%20contacto%20desde%20tu%20tarjeta%20virtual." target="_blank">
-        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
-        Escríbeme
-      </a>
-      <a class="btn btn-contact" href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:Juan%20David%20Campos%20G.%0AORG:Banco%20AV%20Villas%0ATITLE:Ejecutivo%20Comercial%0ATEL:+573113569613%0AEND:VCARD" download="JuanDavidCampos_AVVillas.vcf">
-        <i class="ti ti-user-plus" aria-hidden="true"></i>
-        Agregar Contácto
-      </a>
-    </div>
-
-    <div class="card-footer">
-      Banco AV Villas · Entidad vigilada por la Superfinanciera
-    </div>
   </div>
 </body>
 </html>
