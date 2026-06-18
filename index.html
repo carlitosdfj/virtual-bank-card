@@ -19,16 +19,15 @@
     .card {
       width: 340px;
       border-radius: 20px;
-      overflow: visible;
       background: #fff;
       box-shadow: 0 6px 32px rgba(0,0,0,0.13);
+      overflow: hidden;
     }
 
     /* HEADER */
     .card-header {
       background: #C8102E;
-      border-radius: 20px 20px 0 0;
-      padding: 24px 20px 64px;
+      padding: 24px 20px 16px;
       display: flex;
       align-items: flex-start;
       gap: 14px;
@@ -38,10 +37,7 @@
       width: 90px;
       display: block;
     }
-    .header-info {
-      flex: 1;
-      padding-top: 4px;
-    }
+    .header-info { flex: 1; padding-top: 4px; }
     .name {
       color: #fff;
       font-size: 16px;
@@ -62,19 +58,33 @@
       font-size: 12px;
     }
 
+    /* CURVA */
+    .header-curve {
+      display: block;
+      width: 100%;
+      margin-top: -1px;
+      background: #C8102E;
+      line-height: 0;
+    }
+    .header-curve svg {
+      display: block;
+      width: 100%;
+    }
+
     /* FOTO FLOTANTE */
     .avatar-wrap {
       position: absolute;
       bottom: -44px;
       left: 50%;
       transform: translateX(-50%);
-      width: 88px;
-      height: 88px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       border: 4px solid #fff;
       overflow: hidden;
       background: #a00020;
       box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      z-index: 2;
     }
     .avatar-wrap img {
       width: 100%;
@@ -84,19 +94,25 @@
       display: block;
     }
 
-    /* BODY */
-    .card-body {
-      border-radius: 0 0 20px 20px;
-      overflow: hidden;
-      margin-top: 0;
-      padding-top: 56px;
+    /* CURVE CONTAINER: posición relativa para la foto */
+    .curve-container {
+      position: relative;
+      background: #C8102E;
+      line-height: 0;
+    }
+    .curve-container svg {
+      display: block;
+      width: 100%;
     }
 
+    /* BODY */
+    .card-body {
+      padding-top: 52px;
+    }
     .info-section {
       padding: 0 22px 4px;
       display: flex;
       flex-direction: column;
-      gap: 0;
     }
     .info-row {
       display: flex;
@@ -123,7 +139,6 @@
       margin-bottom: 2px;
     }
 
-    /* SERVICIOS */
     .services-section {
       padding: 12px 22px 6px;
       border-top: 0.5px solid #ebebeb;
@@ -159,7 +174,6 @@
       flex-shrink: 0;
     }
 
-    /* BOTONES */
     .btn-row {
       display: flex;
       gap: 10px;
@@ -186,7 +200,6 @@
     .btn-contact { background: #C8102E; color: #fff; }
     .btn i { font-size: 16px; }
 
-    /* FOOTER */
     .card-footer {
       padding: 8px 22px 14px;
       text-align: center;
@@ -208,6 +221,14 @@
         <p class="cargo">Ejecutivo Comercial</p>
         <p class="banco-sub">Banco AV Villas</p>
       </div>
+    </div>
+
+    <!-- Curva + foto flotante -->
+    <div class="curve-container">
+      <svg viewBox="0 0 340 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60">
+        <path d="M0,0 L340,0 L340,20 Q170,70 0,20 Z" fill="#C8102E"/>
+        <path d="M0,20 Q170,70 340,20 L340,60 L0,60 Z" fill="#ffffff"/>
+      </svg>
       <div class="avatar-wrap">
         <img src="JuanCampos-AV-Villas.jpeg" alt="Juan David Campos G." />
       </div>
